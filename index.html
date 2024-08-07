@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Expense Tracker</h1>
+        <form id="expense-form" class="mb-4">
+            <div class="form-row">
+                <div class="form-group col-lg-3 col-md-6">
+                    <input type="text" class="form-control" id="expense-name" placeholder="Expense Name" required />
+                </div>
+                <div class="form-group col-lg-2 col-md-6">
+                    <input type="number" class="form-control" id="expense-amount" placeholder="Amount (₹)" required />
+                </div>
+                <div class="form-group col-lg-2 col-md-6">
+                    <input type="date" class="form-control" id="expense-date" required />
+                </div>
+                <div class="form-group col-lg-2 col-md-6">
+                    <select id="expense-category" class="form-control" required>
+                        <option value="">Category</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-2 col-md-6">
+                    <select id="payment-method" class="form-control" required>
+                        <option value="">Payment Method</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                        <option value="Online">Online</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-1 col-md-6">
+                    <button type="submit" class="btn btn-success btn-block">Add</button>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Expense Name</th>
+                        <th>Amount (₹)</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Payment Method</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+        </div>
+        <div class="text-right text-light">
+            <strong>Total:</strong>
+            ₹<span id="total-amount">0</span>
+        </div>
+        <div class="dashboard mt-5">
+            <h2 class="text-center text-light">Spending Dashboard</h2>
+            <canvas id="expense-chart"></canvas>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
